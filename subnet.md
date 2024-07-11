@@ -5,7 +5,7 @@ Total Addresses: 2^(32-29) = 8
 Usable Hosts: 8 - 2 =6
 Network Address: 200.200.10.48
 Usable Hosts Ranges: 200.200.10.49 - 200.200.10.54
-Default Gateway: 200.200.10.49
+Default Gateway: 200.200.10.54
 Broadcast Address: 200.200.10.55
 ```
 
@@ -16,7 +16,7 @@ Total Addresses: 2^(32-29) = 8
 Usable Hosts: 8 - 2 =6
 Network Address: 200.200.10.56
 Usable Hosts Ranges: 200.200.10.57 - 200.200.10.62
-Default Gateway: 200.200.10.57
+Default Gateway: 200.200.10.62
 Broadcast Address: 200.200.10.63
 ```
 
@@ -27,7 +27,7 @@ Total Addresses: 2^(32-28) = [32-28 = 4]  [2^4 = 2*2*2*2] = 16
 Usable Hosts: 16 - 2 = 14
 Network Address: 200.200.10.0
 Usable Hosts Ranges: 200.200.10.01 - 200.200.10.14
-Default Gateway: 200.200.10.01
+Default Gateway: 200.200.10.14
 Broadcast Address: 200.200.10.15
 ```
 
@@ -38,7 +38,7 @@ Total Addresses: 2^(32-28) = 4
 Usable Hosts: 16 - 2 = 14
 Network Address: 200.200.10.16
 Usable Hosts Ranges: 200.200.10.17 - 200.200.10.30
-Default Gateway: 200.200.10.17
+Default Gateway: 200.200.10.30
 Broadcast Address: 200.200.10.31
 ```
 
@@ -67,7 +67,7 @@ Total Addresses: 2^(32-26) = 6 [2^6] = 64
 Usable Hosts: 64 - 2 = 62
 Network Address: 92.168.1.25
 Usable Hosts Ranges: 200.200.10.26 - 200.200.10.87
-Default Gateway: 200.200.10.26
+Default Gateway: 200.200.10.87
 Broadcast Address: 200.200.10.88
 ```
 
@@ -88,7 +88,7 @@ Calculate the number of addresses in each subnet: A /26 subnet has 64 addresses 
 ```
 Network address: 192.168.1.0
 Usable Hosts Ranges: 192.168.1.1 - 192.168.1.62
-Default Gateway: 192.168.1.1
+Default Gateway: 192.168.1.62
 Broadcast address: 192.168.1.63
 ```
 
@@ -97,7 +97,7 @@ Broadcast address: 192.168.1.63
 ```
 Network address: 192.168.1.64
 Usable Hosts Ranges: 192.168.1.65 - 192.168.1.126
-Default Gateway: 192.168.1.65
+Default Gateway: 192.168.1.126
 Broadcast address: 192.168.1.127
 ```
 
@@ -106,7 +106,7 @@ Broadcast address: 192.168.1.127
 ```
 Network address: 192.168.1.128
 Usable Hosts Ranges: 192.168.1.129 - 192.168.1.190
-Default Gateway: 192.168.1.129
+Default Gateway: 192.168.1.190
 Broadcast address: 192.168.1.191
 ```
 
@@ -115,7 +115,7 @@ Broadcast address: 192.168.1.191
 ```
 Network address: 192.168.1.192
 Usable Hosts Ranges: 192.168.1.193 - 192.168.1.254
-Default Gateway: 192.168.1.193
+Default Gateway: 192.168.1.254
 Broadcast address: 192.168.1.255
 ```
 
@@ -161,7 +161,7 @@ _Subnets of /23_
 ```
 Network address: 172.16.0.0
 Usable Hosts Ranges: 172.16.0.1 - 172.16.1.254
-Default Gateway: 172.16.0.1
+Default Gateway: 172.16.1.254
 Broadcast address: 172.16.1.255
 ```
 
@@ -172,7 +172,7 @@ Broadcast address: 172.16.1.255
 ```
 Network address: 172.16.2.0
 Usable Hosts Ranges: 172.16.2.1 - 172.16.3.254
-Default Gateway: 172.16.2.1
+Default Gateway: 172.16.3.254
 Broadcast address: 172.16.3.255
 ```
 
@@ -185,7 +185,7 @@ _Two Additional Subnets/24_
 ```
 Network address: 172.16.4.0
 Usable Hosts Ranges: 172.16.4.1 - 172.16.4.254
-Default Gateway: 172.16.4.1
+Default Gateway: 172.16.4.254
 Broadcast address: 172.16.4.255
 ```
 
@@ -196,7 +196,7 @@ Broadcast address: 172.16.4.255
 ```
 Network address: 172.16.5.0
 Usable Hosts Ranges: 172.16.5.1 - 172.16.5.254
-Default Gateway: 172.16.5.1
+Default Gateway: 172.16.5.254
 Broadcast address: 172.16.5.255
 ```
 
@@ -207,4 +207,71 @@ _Summary: The 172.16.0.0/16 network is divided into 4 subnets:_
 172.16.2.0/23 - supports 400 devices
 172.16.4.0/24
 172.16.5.0/24
+```
+
+# 9. Lab: [Subnet 9:Build hosts for 3 departments 192.168.1.0\24](https://www.davidc.net/sites/default/subnets/subnets.html)
+
+**Build hosts for 3 departments: engineering, marketing, printers**
+
+1. _For engineering 46 hosts = \26 = 64 -2 = 62 ip /Net ip: 192.168.1.0\26_
+
+```
+Subnet Masc: 255.255.255.192
+255.255.255.192 => (24) =>(11111111.11111111.11111111.`11`000000) => (+ 2) => `11` => 128 + 64 = 192
+```
+
+```
+Network address: 192.168.1.0
+Usable Hosts Ranges: 192.168.1.0 - 192.168.1.62
+Default Gateway: 192.168.1.62
+Broadcast address: 192.168.1.63
+```
+
+2. _For marketing 15 hosts = \27 => 32 - 2 = 30 ip /Net ip: 192.168.1.64\27_
+
+```
+Subnet Masc: 255.255.255.224
+255.255.255.224 => (24) =>(11111111.11111111.11111111.`111`00000) => (+ 3) => `111` => 128 + 64 + 32 = 224
+```
+
+```
+Network address: 192.168.1.64
+Usable Hosts Ranges: 192.168.1.65 - 192.168.1.94
+Default Gateway: 192.168.1.94
+Broadcast address: 192.168.1.95
+```
+
+3. _For printers 6 hosts = \29 => 8 - 2 = 6 ip /Net ip: 192.168.1.96\29_
+
+```
+Subnet Masc: 255.255.255.248
+255.255.255.248 => (24) =>(11111111.11111111.11111111.`11111`000) => (+ 5) => `11111` => 128 + 64 + 32 + 16 + 8= 248
+```
+
+```
+Network address: 192.168.1.96
+Usable Hosts Ranges: 192.168.1.97 - 192.168.1.102
+Default Gateway: 192.168.1.102
+Broadcast address: 192.168.1.103
+```
+
+```js
+| ------ | ---- | ----- | -------- |
+| subnet | ip   | index | number   |
+| ------ | ---- | ----- | -------- |
+| 32     | 1    | 0     | 1        |
+| 31     | 2    | 1     | 2        |
+| ------ | ---  | ----- | -------- |
+| 30     | 4    | 2     | 3        |
+| 29     | 8    | 3     | 4        |
+| 28     | 16   | 4     | 5        |
+| 27     | 32   | 5     | 6        |
+| 26     | 64   | 6     | 7        |
+| 25     | 128  | 7     | 8        |
+| ------ | ---  | ----- | -------- |
+| 24     | 256  | 8     | 9        |
+| 23     | 512  | 9     | 10       |
+| ------ | ---  | ----- | -------- |
+| 22     | 1024 | 10    | 11       |
+| ------ | ---- | ----- | -------- |
 ```
