@@ -51,8 +51,10 @@ _what is the max num of valid hosts one will have from the network address 192.1
 [`128`,`64`,32,16,8,4,2,0]
 192 = `128` & `64` = "`1`1`000000"
 
-192 = 64 - 2 = 62 (DG)?
+(11`000000`) => `0` => 32 + `0` => 16 + `0` => 8 + `0` => 4 + `0` => 2 + `0` => 1 = 63
 ```
+
+Bum 63!
 
 # 5. Lab: [Subnet 5: 92.168.1.25/26](https://www.davidc.net/sites/default/subnets/subnets.html)
 
