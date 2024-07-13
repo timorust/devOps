@@ -30,4 +30,5 @@ Broadcast Address: 192.168.1.95
 ```js
 first computer ip: 192.168.1.66
 second computer ip: 192.168.1.67
+third computer ip: 192.168.1.68
 ```
