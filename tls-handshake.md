@@ -275,15 +275,24 @@ Proves to Client that Server has correct Session Keys
 6 Record Handshake:
 
 ```javascript
-function Hash = {
-	const HandshakeHash:
-		Client Hello
-		Server Hello
-		Certificate
-		Server Hello Done
-		Client Key Exchange
-		Client Finished
-  return HandshakeHash
+function computeHandshakeHash(
+	clientHello,
+	serverHello,
+	certificate,
+	serverHelloDone,
+	clientKeyExchange,
+	clientFinished
+) {
+	const handshakeHash = crypto.createHash('sha256')
+
+	handshakeHash.update(clientHello)
+	handshakeHash.update(serverHello)
+	handshakeHash.update(certificate)
+	handshakeHash.update(serverHelloDone)
+	handshakeHash.update(clientKeyExchange)
+	handshakeHash.update(clientFinished)
+
+	return handshakeHash.digest('hex')
 }
 ```
 
@@ -309,3 +318,5 @@ const EncryptedVerification = {
 ```
 
 **_APPLICATION DATA WITH SESSION KEYS_**
+
+![This is TLS Handshake](./public/images/tls.png)
